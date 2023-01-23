@@ -2,26 +2,27 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: black;
 
     width: 90vw;
-    height: 80vh;
-    border: 2px solid black;
-    border-radius: 10px;
-    background-size: 100vw;
+    height: 94vh;
+    box-shadow: 0 0px 5px rgb(56, 2, 117);
+    border-radius: 20px;
+    background-size: 100vw 100%;
     background-position: 0 center;
     background-repeat: no-repeat;
+    opacity: 0.9;
 
-
-    animation-duration: 1s;
+    animation-duration: 1.4s;
+    animation-timing-function:cubic-bezier(0.455, 0.03, 0.515, 0.955);
     animation-fill-mode: forwards;
-
 }
 
 
-.to-right{
-    animation-name: to-right;
+.sliding-to-right{
+    animation-name: sliding-to-right;
 }
-@keyframes to-right {
+@keyframes sliding-to-right {
     from{
         background-position: 0vw center, -100vw center, 100vw center;
     }
@@ -30,10 +31,10 @@
     }
 }
 
-.to-left{
-    animation-name: to-left;
+.sliding-to-left{
+    animation-name: sliding-to-left;
 }
-@keyframes to-left {
+@keyframes sliding-to-left {
     from{
         background-position: 0vw center, -100vw center, 100vw center;
     }
@@ -42,12 +43,106 @@
     }
 }
 
-.slider-buttons{
-    display: flex;
-    width: 80vw;
-    justify-content: space-between;
+.transition-to-right{
+    animation-name: transition-anim;
 }
+.transition-to-left{
+    animation-name: transition-anim;
+}
+@keyframes transition-anim {
+    from{
+        background: inherit;
+    }
+    to{
+        background: rgb(0, 0, 0);
+    }
+}
+
+.content{
+    width: 90vw;
+    height: 94vh;
+    backdrop-filter: brightness(30%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px;
+}
+
 
 .slider-arrow{
     cursor: pointer;
+    color: rgb(253, 232, 255);
+    transition: 0.5s;
+    opacity: 0.6;
+}
+.slider-arrow:hover{
+    opacity: 1;
+}
+
+.content h2{
+    color: rgb(255, 255, 255);
+    text-shadow: 0 0px 2px rgb(240, 240, 240);
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+}
+
+.content h3{
+    color: white;
+    text-align: right;
+}
+
+.options{
+    color: white;
+    font-size: 40px;
+    position: absolute;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    bottom: 0;
+    top: 400px;
+    text-align: center;
+    display: flex;
+    height: 300px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.option-button{
+    transition: 1s;
+    transform: rotate(0deg);
+}
+
+.option-button-hover{
+    transform: rotate(180deg);
+}
+
+.option-box{
+    width: 400px;
+    height: 150px;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    opacity: 0;
+    transition: 1s;
+}
+
+.show-option-box{
+    opacity: 1;
+}
+
+.option-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(225, 109, 0);
+    width: 100%;
+}
+
+.option-item p{
+    font-size: 24px;
 }
