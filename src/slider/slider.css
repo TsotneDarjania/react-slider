@@ -3,6 +3,7 @@
     justify-content: center;
     align-items: center;
     background-color: black;
+    box-sizing: border-box;
 
     width: 90vw;
     height: 94vh;
@@ -73,6 +74,7 @@
     cursor: pointer;
     color: rgb(253, 232, 255);
     transition: 0.5s;
+    font-size: 60px;
     opacity: 0.6;
 }
 .slider-arrow:hover{
@@ -145,4 +147,29 @@
 
 .option-item p{
     font-size: 24px;
+}
+
+
+
+@media screen and (max-width:1170px) {
+    .content h2{
+        font-size: 20px;
+    }
+}
+@media screen and (max-width:850px) {
+    .content{
+        padding: 20px;
+    }
+}
+@media screen and (max-width:650px) {
+    .content{
+        padding: 3px;
+    }
+    .slider-arrow{
+        font-size: 40px;
+    }
+
+    .option-box{
+        width: 300px;
+    }
 }

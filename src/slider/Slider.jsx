@@ -56,7 +56,7 @@ const Slider = (sliderInfo) => {
     <div style={{backgroundImage : backgroundImageUrls, animationDuration:sliderSpeed+"s"}} ref={sliderRef} className={"slider "+sliderClass}>
         <div className='content'>
             <div className='slider-arrow left-arrow'>
-                <BiLeftArrow size={60} onClick={ () => {
+                <BiLeftArrow onClick={ () => {
                     if(sliderAnimationState !== "stop") return; 
                     setSliderAnimationState("running")
                     setSliderClass( sliderMode + "-to-left");
@@ -65,7 +65,7 @@ const Slider = (sliderInfo) => {
             </div>
             <h2>  This is a great slider which made by Tsotne Darjania </h2>
             <div className='slider-arrow right-arrow'>
-                <BiRightArrow size={60} onClick={ () => { 
+                <BiRightArrow onClick={ () => { 
                     if(sliderAnimationState !== "stop") return; 
                     setSliderAnimationState("running")
                     setSliderClass(sliderMode + "-to-right");
